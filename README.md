@@ -1,6 +1,9 @@
 # Laravel Entity Framework
 Entity Framework, C#, makes working with models easy. We re-designed the basic concepts of Entity in Laravel for PHP.
 
+# Installation
+Download a copy of this repository. Directly move the `/app/IezonHelper.php` into your Laravel `/app/` directory.
+
 # Setting up your enviroment
 ```php
 use \App\IezonHelper;
@@ -13,6 +16,7 @@ IezonHelper::getInstance()->setTable('myTable')->setReference($myModel);
 use \App\IezonHelper;
 
 IezonHelper::getInstance()->setTable('myTable')->setReference($myModel);
+
 foreach(IezonHelper::getInstance()->fetch()->all() as $myModel) {
     $myModel->itemToChange = 'foo';
     IezonHelper::getInstance()->where(['id' => $myModel->id])->saveModel();
